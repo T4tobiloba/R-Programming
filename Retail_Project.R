@@ -1,6 +1,7 @@
 retail_data <- read.csv("online_retail.csv")
 install.packages("tidyverse")
 library(tidyverse)
+
 # take a look at the summary 
 glimpse(retail_data)
 summary(retail_data)
