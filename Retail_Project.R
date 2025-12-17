@@ -83,6 +83,16 @@ retail_clean %>%
   ggplot(aes(x = Weekday, y = Total_sold)) +
   geom_col(fill = "tomato") +
   labs(title = "Weekly revenue", x = "Weekday", y = "Total_sold")
+
+#revenue by month, faceted by country
+retail_clean %>%
+  filter(Country %in% c("United Kingdom", "Germany", "France")) %>%
+  group_by(Month, Country) %>%
+  summarise(MonthlyRevenue = sum(total_price))%>%
+  ggplot (aes(x=Month, y=MonthlyRevenue, fill=Country)) +
+  geom_col(show.legend = FALSE)
+  facet_wrap(~Country) +
+  labs(title = "Monthly Revenue by Countries", x="Month", y="Revenue")
   
   
   
