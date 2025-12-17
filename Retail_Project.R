@@ -81,7 +81,7 @@ retail_clean %>%
   summarise(Total_sold= sum(Quantity)) %>%
   slice_head(n=10) %>%
   ggplot(aes(x = Weekday, y = Total_sold)) +
-  geom_col(fill = "tomato") +
+  geom_col(fill = "pink") +
   labs(title = "Weekly revenue", x = "Weekday", y = "Total_sold")
 
 #revenue by month, faceted by country
